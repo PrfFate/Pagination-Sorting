@@ -1,11 +1,15 @@
 package com.aliacar.controller;
 
-import org.springframework.data.domain.Page;
 
-import com.aliacar.model.Personel;
+
+import com.aliacar.dto.DtoPersonel;
+
+import com.aliacar.utils.RestPageableEntity;
+import com.aliacar.utils.RestPageableRequest;
+import com.aliacar.utils.RestRootEntity;
 
 public interface IRestPersonelController {
 
-    public Page<Personel> findAllPageable(int pageNumber,int pageSize);
+    public RestRootEntity<RestPageableEntity<DtoPersonel>> findAllPageable(RestPageableRequest pageableRequest);
 
 }
